@@ -110,6 +110,12 @@ test_spreadsheet_name = features_test_clean.df
 
  * * * 
  ## Description of Output files are saved in results directory
+ * * * 
  
+ | **Gene Name** | **Prediction**|
+ | ------------- | ------------- |
+ | User Gene 1   | Float         |
+ | ...           | ...           |
+ | User Gene n   | Float         |
  
   
