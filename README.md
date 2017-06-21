@@ -104,7 +104,9 @@ Using Lasso
 | method                    | Elastic Net  | http://scikit-learn.org/stable/modules/linear_model.html#elastic-net |
 | results_directory | directory | Directory to save the output files |
 
-spreadsheet_name = ProGENI_rwr20_STExp_GDSC_500.rname.gxc.tsv</br>
+spreadsheet_name = features_train_clean.df
+response_name = response_train_clean.df
+test_spreadsheet_name = features_test_clean.df
 
  * * * 
  ## Description of Output files are saved in results directory
