@@ -104,8 +104,8 @@ Using Lasso
 | method                    | Elastic Net  | http://scikit-learn.org/stable/modules/linear_model.html#elastic-net |
 | results_directory | directory | Directory to save the output files |
 
-spreadsheet_name = features_train_clean.df
-response_name = response_train_clean.df
+spreadsheet_name = features_train_clean.df</br>
+response_name = response_train_clean.df</br>
 test_spreadsheet_name = features_test_clean.df
 
  * * * 
