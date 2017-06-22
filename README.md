@@ -101,8 +101,9 @@ Using Lasso
  
 | **Key**                   | **Value** | **Comments** |
 | ------------------------- | --------- | ------------ |
-| method                    | Elastic Net  | http://scikit-learn.org/stable/modules/linear_model.html#elastic-net |
-| results_directory | directory | Directory to save the output files |
+| Elastic Net               | Method    | http://scikit-learn.org/stable/modules/linear_model.html#elastic-net |
+| Lasso                     | Method    | http://scikit-learn.org/stable/modules/linear_model.html#lasso|
+| results_directory         | Directory | Directory to save the output files |
 
 spreadsheet_name = features_train_clean.df</br>
 response_name = response_train_clean.df</br>
