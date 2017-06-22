@@ -4,13 +4,13 @@ def lasso_predict(run_parameters):
     from phenotype_prediction_toolbox import run_lasso_predict
     run_lasso_predict(run_parameters)
     
-SELECT = {'lasso_predict': lasso_predict}
 
 def elastic_net_predict(run_parameters):
     from phenotype_prediction_toolbox import run_elastic_predict
     run_elastic_predict(run_parameters)
 
-SELECT = {'elastic_net_predict': elastic_net_predict}
+SELECT = {'elastic_net_predict': elastic_net_predict,
+            'lasso_predict': lasso_predict}
 
 def main():
     import sys
