@@ -1,5 +1,10 @@
 # this is the main function of PPP
 
+def lasso_predict(run_parameters):
+    from phenotype_prediction_toolbox import run_lasso_predict
+    run_lasso_predict(run_parameters)
+    
+SELECT = {'lasso_predict': lasso_predict}
 
 def elastic_net_predict(run_parameters):
     from phenotype_prediction_toolbox import run_elastic_predict
