@@ -6,6 +6,18 @@ from sklearn import linear_model
 
 import knpackage.toolbox as kn
 
+def run_lasso_predict(run_parameters):
+    gene_samples_train_df = kn.get_spreadsheet_df(run_parameters['spreadsheet_name_full_path'])
+    response_train_df = kn.get_spreadsheet_df(run_parameters['response_name_full_path'])
+    gene_samples_test_df = kn.get_spreadsheet_df(run_parameters['test_spreadsheet_name_full_path'])
+    response_test_sample_names = list(gene_samples_test_df.columns)
+    reg_moE = linear_model.Lasso()
+    response_predict = reg_moE.fit(gene_samples_train_df.transpose().values,
+                                   response_train_df.values[0]).predict(gene_samples_test_df.transpose().values)
+
+    predict_df = pd.DataFrame(response_predict.T, index=response_test_sample_names, columns=['predict'])
+    write_predict_data(predict_df, run_parameters)
+    
 def run_elastic_predict(run_parameters):
 
     gene_samples_train_df = kn.get_spreadsheet_df(run_parameters['spreadsheet_name_full_path'])
