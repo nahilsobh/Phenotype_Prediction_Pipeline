@@ -1,1 +1,11 @@
-# This is the yaml file for lasso algorithm
+# ------------------------------------------------------------------------------------------------------
+# - This is the yaml file for lasso algorithm -
+# ------------------------------------------------------------------------------------------------------
+
+method:                          lasso_predict
+
+spreadsheet_name_full_path:      ../data/spreadsheets/features_train_clean.df
+response_name_full_path:         ../data/spreadsheets/response_train_clean.df
+test_spreadsheet_name_full_path: ../data/spreadsheets/features_test_clean.df
+
+results_directory:               ./run_dir/results
