@@ -42,3 +42,6 @@ final_clean:    clean_dir_recursively
 
 clean_dir_recursively:
 	$(RMR) $(RUN_DIR)
+#Verifying
+verification_tests:
+        python3 ./integration/verify_benchmarks.py
