@@ -32,7 +32,7 @@ def verify_results_directory(v_dir, results_dir):
     return number_of_equals, len(v_files_list)
 def run_all_BENCHMARKs_and_TESTs():
     """ run the make file targes for all yaml files and compre the results with their verification files """
-     t0 = time.time()
+    t0 = time.time()
     directory_methods_dict = {v: k for k, v in (GP_options_dict).items()}
     verification_directory_list = sorted(directory_methods_dict.keys(), reverse=True)
 
