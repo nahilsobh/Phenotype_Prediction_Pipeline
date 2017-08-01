@@ -59,12 +59,12 @@ make env_setup
   
  * Run Elastic Net pipeline</br>
   ```
-  make run_elastic_predict
+  make run_elastic_net
   ```
  
  * Run Lasso pipeline</br>
  ```
- make run_lasso_predict
+ make run_lasso
  ```
  
 __***Follow steps 1-3 above then do the following:***__
