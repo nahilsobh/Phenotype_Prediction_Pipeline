@@ -36,8 +36,9 @@ cd test
 make env_setup
 ```
 
-### 4. Run the Samples Clustering Pipeline
+### 4. Run the Phenotype Prediction Pipeline
 ```
-make run_cc_net_nmf
+make run_lasso
+make run_elastic_net
 ```
 
