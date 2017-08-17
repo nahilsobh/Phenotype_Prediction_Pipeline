@@ -5,10 +5,13 @@ import os
 import filecmp
 import time
 
-GP_options_dict = {
-                'run_elastic_net'               : 'BENCHMARK_2_ElasticNet',
-                'run_lasso'                     : 'BENCHMARK_1_PPP_Lasso'}
+import numpy as np
+import pandas as pd
+TOL = 1e-12
 
+GP_options_dict = {
+                'run_lasso'                     : 'BENCHMARK_1_PPP_Lasso',
+                'run_elastic_net'               : 'BENCHMARK_2_ElasticNet'}
 
 verify_root_dir = '../data/verification'
 results_dir = './run_dir/results'
@@ -25,11 +28,22 @@ def verify_results_directory(v_dir, results_dir):
                 res_file_full_name = os.path.join(results_dir, res_file_name)
                 veri_file_name = os.path.join(v_dir, file_name)
                 if filecmp.cmp(res_file_full_name, veri_file_name) == False:
-                    print('NOT EQUAL:\n', file_name, '\n', res_file_name, '\n')
+                    res_df = pd.read_csv(res_file_full_name, sep='\t', index_col=0, header=0)
+                    veri_df = pd.read_csv(veri_file_name, sep='\t', index_col=0, header=0)
+                    try:
+                        if ( (np.abs(res_df.as_matrix() - veri_df.as_matrix()) > TOL) + 0).sum() > 0:
+                            print('NOT EQUAL:\n', file_name, '\n', res_file_name, '\n')
+                        else:
+                            number_of_equals += 1
+                    except:
+
+                        pass
                 else:
                     number_of_equals += 1
 
     return number_of_equals, len(v_files_list)
+
+
 def run_all_BENCHMARKs_and_TESTs():
     """ run the make file targes for all yaml files and compre the results with their verification files """
     t0 = time.time()
